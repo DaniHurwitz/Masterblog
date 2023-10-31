@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "author": "John Doe",
+    "title": "First Post",
+    "content": "This is my first post."
+  },
+  {
+    "id": 2,
+    "author": "Jane Doe",
+    "title": "Second Post",
+    "content": "This is another post."
+  },
+  {
+    "id": "2b0b88eb-8d0d-4120-bc0a-bf449c71877f",
+    "author": "Meee",
+    "title": "Cats",
+    "content": "There is a cat at my door, meow"
+  }
+]
