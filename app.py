@@ -7,6 +7,7 @@ app = Flask(__name__)
 with open('storage.json', 'r') as json_file:
     blog_posts = json.load(json_file)
 
+
 @app.route('/')
 def index():
     '''
@@ -42,6 +43,28 @@ def add():
         return redirect(url_for('index'))
 
     return render_template('add.html')
+
+
+@app.route('/delete/<post_id>', methods=['POST'])
+def delete(post_id):
+    '''
+    Deletes a blog post with the given post_id.
+    :param post_id: The ID of the blog post to be deleted.
+    :return: Redirect to the homepage after deleting.
+    '''
+    # Find and remove the blog post with the specified post_id
+    for post in blog_posts:
+        if post['id'] == post_id:
+            blog_posts.remove(post)
+            break
+
+    # Save the updated blog posts to the JSON file
+    with open('storage.json', 'w') as json_file:
+        json.dump(blog_posts, json_file, indent=2)
+
+    # Redirect to the homepage
+    return redirect(url_for('index'))
+
 
 
 
