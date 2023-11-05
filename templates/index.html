@@ -18,6 +18,12 @@
         <p><em>Written by {{ post.author }}</em></p>
         <p>{{ post.content }}</p>
 
+        <!-- Form for updating the blog post -->
+        <form method="GET" action="{{ url_for('update', post_id=post.id) }}">
+            <button type="submit">Update</button>
+            <input type="hidden" name="post_id" value="{{ post.id }}">
+        </form>
+
         <!-- Form (hidden input) for deleting the blog post -->
         <form method="POST" action="{{ url_for('delete', post_id=post.id) }}">
             <button type="submit">Delete</button>

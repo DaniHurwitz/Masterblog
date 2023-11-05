@@ -26,6 +26,16 @@ h1 {
     margin: 10px 0;
 }
 
+.post form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post form button {
+    margin: 5px;
+}
+
+
 a {
     text-decoration: none;
     color: #007BFF;
